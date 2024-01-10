@@ -1,0 +1,3 @@
+# mast
+
+Mastodon Theme Generator
