@@ -13,6 +13,8 @@
     --mast-base-color-l26: ##606984;
     /* darken(base-color, 4%)}; */
     --mast-base-color-d04: #1f232b;
+    /* white */
+    --mast-primary-text-color: #ffffff;
     /* lighten(secondary-color, 6%) */
     --mast-secondary-text-color: #707b97;
     /* darken(highlight-color, 8%) */
@@ -34,7 +36,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: var(--mast-base-color-l04);
-    border: 0px none #ffffff;
+    border: 0px none var(--mast-primary-text-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -46,7 +48,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    border: 0px none #ffffff;
+    border: 0px none var(--mast-primary-text-color);
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -60,7 +62,7 @@ html {
 
 body {
     background: #191b22;
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 body.lighter {
@@ -93,11 +95,11 @@ body.embed {
 }
 
 .logo {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .logo-container a {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account-header {
@@ -159,7 +161,7 @@ body.embed {
 .directory__tag h4 .fa,
 .directory__tag h4 small,
 .directory__tag h4 .trends__item__current {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .directory__tag.active .avatar-stack .account__avatar {
@@ -175,7 +177,7 @@ body.embed {
 }
 
 .accounts-table__count {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .accounts-table__count small {
@@ -199,7 +201,7 @@ body.embed {
 }
 
 .indicator-icon {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .indicator-icon.success {
@@ -212,7 +214,7 @@ body.embed {
 
 .simple_form input,
 .simple_form textarea {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: #131419;
     border: 1px solid #131419;
 }
@@ -290,7 +292,7 @@ body.embed {
 .simple_form .button,
 .simple_form .block-button {
     background: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .simple_form button:active,
@@ -358,7 +360,7 @@ body.embed {
 }
 
 .card__bar .display-name strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .card__bar .display-name span {
@@ -371,11 +373,11 @@ body.embed {
 .pagination .older,
 .pagination .page,
 .pagination .gap {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .pagination .current {
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
     color: var(--mast-base-color);
 }
 
@@ -441,7 +443,7 @@ body.embed {
 
 .button {
     background-color: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .button:active,
@@ -471,7 +473,7 @@ body.embed {
 .button.button-secondary:focus,
 .button.button-secondary:hover {
     border-color: #4e4c5a;
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background-color: #4e4c5a;
 }
 
@@ -485,7 +487,7 @@ body.embed {
 .button.button-tertiary:focus,
 .button.button-tertiary:hover {
     background-color: var(--blurple-600);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     border: 0;
 }
 
@@ -498,7 +500,7 @@ body.embed {
 .button.button-tertiary.button--confirmation:focus,
 .button.button-tertiary.button--confirmation:hover {
     background: #79bd9a;
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .button.button-tertiary.button--destructive {
@@ -510,7 +512,7 @@ body.embed {
 .button.button-tertiary.button--destructive:focus,
 .button.button-tertiary.button--destructive:hover {
     background: #df405a;
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .icon-button {
@@ -574,13 +576,13 @@ body.embed {
 .compose-form .autosuggest-input,
 .compose-form .spoiler-input {
     color: var(--mast-base-color);
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .spoiler-input__input {
     color: var(--mast-base-color);
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .compose-form .autosuggest-textarea__textarea::-ms-input-placeholder,
@@ -614,7 +616,7 @@ body.embed {
 .compose-form .compose-form__publish .compose-form__publish-button-wrapper,
 .character-counter {
     color: var(--mast-base-color);
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .sign-in-banner p {
@@ -691,7 +693,7 @@ body.embed {
 .status__content.status__content--with-spoiler .status__content__text,
 .reply-indicator__content.status__content--with-spoiler .status__content__text,
 .detailed-status .status__content .status__content__spoiler-link {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: var(--mast-base-color-l26);
 }
 
@@ -739,7 +741,7 @@ body.embed {
 .status__wrapper--filtered__button:hover,
 .status__wrapper--filtered__button:active {
     color: var(--mast-highlight-text-color);
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .focusable:focus,
@@ -788,7 +790,7 @@ body.embed {
 }
 
 .domain .domain__domain-name {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account {
@@ -853,7 +855,7 @@ body.embed {
 .copy-paste-text {
     background: var(--mast-base-color-l04);
     border: 1px solid var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .copy-paste-text:focus,
@@ -867,7 +869,7 @@ body.embed {
 
 .column-link {
     background: var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     border-left: 4px solid transparent;
 }
 
@@ -931,7 +933,7 @@ body.embed {
     background: var(--mast-base-color-l04);
     border-radius: 8px;
     border: 1px solid var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .copy-paste-text:focus,
@@ -982,7 +984,7 @@ body.embed {
     background: var(--mast-base-color-l04);
     border-radius: 8px;
     border: 1px solid var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .copy-paste-text:focus,
@@ -1031,7 +1033,7 @@ body.embed {
 .copy-paste-text {
     background: var(--mast-base-color-l04);
     border: 1px solid var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .copy-paste-text:focus,
@@ -1097,7 +1099,7 @@ body.embed {
 .status-card__actions a:hover,
 .status-card__actions a:active,
 .status-card__actions a:focus {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 a.status-card:hover .status-card__title,
@@ -1116,7 +1118,7 @@ a.status-card:active .status-card__description {
 }
 
 .status-card__title {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .status-card__host {
@@ -1124,7 +1126,7 @@ a.status-card:active .status-card__description {
 }
 
 .status-card__author {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .status-card__description {
@@ -1192,12 +1194,12 @@ a.status-card:active .status-card__description {
 }
 
 .column-header__button.active {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: var(--mast-base-color-l04);
 }
 
 .column-header__button.active:hover {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .column-header__button:disabled {
@@ -1326,7 +1328,7 @@ a.status-card:active .status-card__description {
 }
 
 .relationship-tag {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background-color: rgba(0, 0, 0, 0.45);
 }
 
@@ -1363,15 +1365,15 @@ a.status-card:active .status-card__description {
 }
 
 .error-column__message h1 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .emoji-picker-dropdown__menu {
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .emoji-picker-dropdown__modifiers__menu {
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .emoji-picker-dropdown__modifiers__menu button {
@@ -1392,7 +1394,7 @@ a.status-card:active .status-card__description {
 }
 
 .privacy-dropdown__dropdown {
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .privacy-dropdown__option {
@@ -1402,12 +1404,12 @@ a.status-card:active .status-card__description {
 .privacy-dropdown__option:hover,
 .privacy-dropdown__option.active {
     background: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .privacy-dropdown__option:hover .privacy-dropdown__option__content,
 .privacy-dropdown__option.active .privacy-dropdown__option__content {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .privacy-dropdown__option.active:hover {
@@ -1415,7 +1417,7 @@ a.status-card:active .status-card__description {
 }
 
 .language-dropdown__dropdown {
-    background: #ffffff;
+    background: var(--mast-primary-text-color);
 }
 
 .language-dropdown__dropdown__results__item {
@@ -1424,7 +1426,7 @@ a.status-card:active .status-card__description {
 
 .language-dropdown__dropdown__results__item.active {
     background: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .language-dropdown__dropdown__results__item.active:hover {
@@ -1448,14 +1450,14 @@ a.status-card:active .status-card__description {
 .search__popout__menu__item:active,
 .search__popout__menu__item.selected {
     background: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .search__popout__menu__item:hover .icon-button,
 .search__popout__menu__item:focus .icon-button,
 .search__popout__menu__item:active .icon-button,
 .search__popout__menu__item.selected .icon-button {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .search.active .search__popout {
@@ -1522,7 +1524,7 @@ a.status-card:active .status-card__description {
 .media-modal__zoom-button:hover,
 .media-modal__zoom-button:focus,
 .media-modal__zoom-button:active {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -1542,7 +1544,7 @@ a.status-card:active .status-card__description {
 .media-modal__nav:hover,
 .media-modal__nav:focus,
 .media-modal__nav:active {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .media-modal__overlay
@@ -1564,7 +1566,7 @@ a.status-card:active .status-card__description {
 }
 
 .media-modal__page-dot {
-    background-color: #ffffff;
+    background-color: var(--mast-primary-text-color);
 }
 
 .media-modal__page-dot:focus {
@@ -1625,7 +1627,7 @@ a.status-card:active .status-card__description {
 
 .report-dialog-modal .status__content__spoiler-link,
 .report-dialog-modal .status__content__spoiler-link:hover {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: var(--mast-primary-color);
 }
 
@@ -1642,7 +1644,7 @@ a.status-card:active .status-card__description {
 }
 
 .media-gallery__gifv__label {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: rgba(0, 0, 0, 0.65);
 }
 
@@ -1760,7 +1762,7 @@ a.status-card:active .status-card__description {
 
 .video-player {
     background: #000000;
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .video-player__controls {
@@ -1784,7 +1786,7 @@ a.status-card:active .status-card__description {
 }
 
 .video-player__buttons a {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .scrollable .account-card {
@@ -1856,7 +1858,7 @@ a.status-card:active .status-card__description {
 }
 
 .focal-point__preview strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 @media screen and (width <= 480px) {
@@ -1893,7 +1895,7 @@ a.status-card:active .status-card__description {
 }
 
 .account__header__tabs__name h1 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account__header__tabs__name h1 small {
@@ -1901,7 +1903,7 @@ a.status-card:active .status-card__description {
 }
 
 .account__header__bio .account__header__content {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account__header__bio .account__header__fields dt {
@@ -1921,11 +1923,11 @@ a.status-card:active .status-card__description {
 }
 
 .account__header__extra__links a strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account__header__account-note {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account__header__account-note label {
@@ -2057,7 +2059,7 @@ a.status-card:active .status-card__description {
 }
 
 .story {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     border-bottom: 1px solid var(--mast-base-color-l08);
 }
 
@@ -2081,7 +2083,7 @@ a.status-card:active .status-card__description {
 }
 
 .story__details__title {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .story__details__shared {
@@ -2097,7 +2099,7 @@ a.status-card:active .status-card__description {
 }
 
 .server-banner__introduction strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .server-banner__introduction a {
@@ -2109,7 +2111,7 @@ a.status-card:active .status-card__description {
 }
 
 .server-banner__number {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .server-banner__number-label {
@@ -2134,7 +2136,7 @@ a.status-card:active .status-card__description {
 }
 
 .interaction-modal p strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .interaction-modal__icon {
@@ -2148,7 +2150,7 @@ a.status-card:active .status-card__description {
 .interaction-modal__login__input {
     background: var(--mast-base-color);
     border: 1px solid var(--mast-base-color-l08);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .interaction-modal__login__input input {
@@ -2185,7 +2187,7 @@ a.status-card:active .status-card__description {
 
 .dismissable-banner__message,
 .warning-banner__message {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .dismissable-banner__message h1,
@@ -2223,7 +2225,7 @@ a.status-card:active .status-card__description {
 }
 
 .about__header h1 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .about__header p {
@@ -2239,7 +2241,7 @@ a.status-card:active .status-card__description {
 }
 
 .about__mail {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .about__section__title {
@@ -2259,7 +2261,7 @@ a.status-card:active .status-card__description {
 
 .notification-bar {
     background: rgba(0, 0, 0, 0.85);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     border: 1px solid rgba(49, 53, 67, 0.85);
 }
 
@@ -2403,7 +2405,7 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .sidebar ul a:hover {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background-color: #1d2028;
 }
 
@@ -2424,7 +2426,7 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background-color: var(--mast-highlight-color);
 }
 
@@ -2443,7 +2445,7 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .content__heading__tabs a.selected {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     background: var(--mast-highlight-color);
 }
 
@@ -2469,11 +2471,11 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .content .fields-group h6 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .admin-wrapper .content .directory__tag h4 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .admin-wrapper .content > p {
@@ -2481,7 +2483,7 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .content > p strong {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .admin-wrapper .content hr {
@@ -2531,7 +2533,7 @@ body .warning-hint,
 }
 
 .filters .filter-subset a:hover {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
     border-bottom: 2px solid #333846;
 }
 
@@ -2617,7 +2619,7 @@ body .warning-hint,
 }
 
 .admin-account-bio .account__header__content {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .applications-list__item,
@@ -2648,7 +2650,7 @@ body .warning-hint,
 
 .announcements-list__item__action-bar,
 .filters-list__item__action-bar {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .retention__table__number {
@@ -2671,7 +2673,7 @@ body .warning-hint,
 .retention__table__box--80,
 .retention__table__box--90,
 .retention__table__box--100 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .sparkline__value__total,
@@ -2695,7 +2697,7 @@ body .warning-hint,
 
 .report-reason-selector__category__label,
 .report-reason-selector__rule {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .report-header__details__item,
@@ -2712,7 +2714,7 @@ body .warning-hint,
 }
 
 .account-card__title .display-name bdi {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account-card__bio::after {
@@ -2724,7 +2726,7 @@ body .warning-hint,
 }
 
 .account-card__counters__item {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .account-card__counters__item small {
@@ -2745,7 +2747,7 @@ body .warning-hint,
 }
 
 .report-notes__item__header .username {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .report-notes__item__header .username a {
@@ -2753,7 +2755,7 @@ body .warning-hint,
 }
 
 .report-notes__item__content {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .report-notes__item__content a {
@@ -2782,7 +2784,7 @@ body .warning-hint,
 
 .strike-card {
     background: var(--mast-base-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .strike-card a {
@@ -2794,7 +2796,7 @@ body .warning-hint,
 }
 
 .strike-card__rules__text {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .strike-card__statuses-list {
@@ -2819,7 +2821,7 @@ body .warning-hint,
 }
 
 .availability-indicator {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .availability-indicator__graphic__item {
@@ -2845,7 +2847,7 @@ body .warning-hint,
 }
 
 .history__entry h5 {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .dashboard__counters > div > div,
@@ -2861,7 +2863,7 @@ body .warning-hint,
 
 .dashboard__counters__num,
 .dashboard__counters__text {
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .dashboard__counters__label {
@@ -2870,7 +2872,7 @@ body .warning-hint,
 
 .dashboard__quick-access {
     background: var(--mast-highlight-color);
-    color: #ffffff;
+    color: var(--mast-primary-text-color);
 }
 
 .dashboard__quick-access:active,
