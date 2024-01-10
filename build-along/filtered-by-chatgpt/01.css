@@ -1,0 +1,91 @@
+:root {
+    --dropdown-border-color: #42485a;
+    --dropdown-background-color: #313543;
+    --dropdown-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+    --modal-background-color: #1f232b;
+    --modal-border-color: #313543;
+}
+
+html {
+    scrollbar-color: #313543 rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #313543;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #353a49;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #313543;
+}
+
+::-webkit-scrollbar-track {
+    border: 0px none #ffffff;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #282c37;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #282c37;
+}
+
+body {
+    background: #191b22;
+    color: #ffffff;
+}
+
+body.lighter {
+    background: #282c37;
+}
+
+body.admin {
+    background: #1f232b;
+}
+
+body.error {
+    background: #282c37;
+    color: #9baec8;
+}
+
+a:focus {
+    border-radius: 4px;
+    outline: solid 2px #7477fd;
+}
+
+a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+body.player {
+    background: #191b22;
+}
+
+body.embed {
+    background: #313543;
+}
+
+body.with-modals {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body.with-modals--active {
+    overflow-y: hidden;
+}
+
+.logo {
+    color: #ffffff;
+}
+
+.logo-container a {
+    color: #ffffff;
+}
