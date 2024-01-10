@@ -537,7 +537,7 @@ body.embed {
 }
 
 .icon-button.disabled {
-    color: #444b5d;
+    color: var(--mast-base-color-l12);
     background-color: transparent;
 }
 
@@ -1833,7 +1833,7 @@ a.status-card:active .status-card__description {
 }
 
 .list-editor h4 {
-    background: #444b5d;
+    background: var(--mast-base-color-l12);
 }
 
 .list-adder {
@@ -1844,7 +1844,7 @@ a.status-card:active .status-card__description {
 .list-adder__account,
 .list-adder__lists,
 .list-adder .list {
-    background: #444b5d;
+    background: var(--mast-base-color-l12);
 }
 
 .list-adder .list__display-name {
