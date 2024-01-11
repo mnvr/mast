@@ -25,12 +25,46 @@
 
         <!-- Our own CSS -->
         <style>
+            :root {
+                font-family: system-ui, sans-serif;
+                font-size: 21px;
+            }
+
             body {
                 margin: 1em;
             }
 
+            p {
+                max-width: 33rem;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                /* The purple styling for visited links is not visible in the
+                   browser's default dark mode. */
+                a:visited {
+                    color: mediumpurple;
+                }
+            }
+
+            hr {
+                opacity: 0.3;
+            }
+
             .error {
                 color: crimson;
+            }
+
+            .hint {
+                font-size: smaller;
+                font-style: italic;
+            }
+
+            .color-input-container {
+                margin-block-end: 1rem;
+            }
+
+            .color-input-container input {
+                margin-inline: 1rem;
             }
 
             textarea {
@@ -100,44 +134,76 @@
             function Themer({ template }) {
                 return (
                     <>
+                        <Instructions />
+                        <Inputs />
                         <GeneratedCSS template={template} />
-                        <PreviewArea />
+                        <About />
                     </>
                 );
             }
 
-            function GeneratedCSS({ template }) {
-                return <textarea value={template} readOnly={true} />;
-            }
-
-            function PreviewArea() {
+            function Instructions() {
                 return (
                     <div>
-                        <div className="mybox-1" />
-                        <div className="mybox-2" />
-                        <div className="mybox-3" />
-                        <div>
+                        <ol>
+                            <li>Fill in your colors</li>
+                            <li>
+                                Paste the generated CSS into the Custom CSS
+                                setting of your Mastodon server
+                            </li>
+                            <li>Profit</li>
+                            <li>
+                                <i>gru </i>Profit?!?
+                            </li>
+                        </ol>
+                    </div>
+                );
+            }
+
+            function Inputs() {
+                return (
+                    <div>
+                        <hr />
+                        <h4>Fill in your colors here</h4>
+                        <p className="hint">
+                            You can input anything that is a valid CSS color.
+                            There is no validation, so be careful: invalid
+                            inputs will produce a broken CSS.
+                        </p>
+                        <div className="color-input-container">
+                            <label for="base-color">Base color</label>
+                            <input type="text" id="base-color"></input>
+                        </div>
+                    </div>
+                );
+            }
+
+            function GeneratedCSS({ template }) {
+                return (
+                    <div>
+                        <hr />
+                        <h4>Generated CSS</h4>
+                        <textarea value={template} readOnly={true} />
+                    </div>
+                );
+            }
+
+            function About() {
+                return (
+                    <div>
+                        <hr />
+                        <h4>About</h4>
+                        <p>
                             I made this to create a custom theme for a Mastodon
-                            instance. It barely works, but maybe this is still
-                            useful for someone, so releasing it.{" "}
-                            <b>It'll likely produce a bad theme</b>, but maybe
-                            it is a good starting point. More details and the
-                            source code for this is available at{" "}
+                            instance. It barely works, and{" "}
+                            <b>will likely produce a bad theme</b>, but maybe
+                            that is still useful for someone, say as a starting
+                            point, so I'm releasing it.
+                        </p>
+                        <p>
+                            More info & source code is at{" "}
                             <a href="">https://github.com/mnvr/mast</a>.
-                        </div>
-                        <div>
-                            This is a minimal preview, meant as a sanity check.
-                            The Mastodon CSS is huge (almost 3000 lines), and
-                            the full effects of these customizations can only be
-                            seen on an actual Mastodon instance. You could,
-                            however, run a test instance in a GitHub codespace
-                            using the instructions in the Mastodon README to
-                            preview these changes before applying them to your
-                            main instance.
-                        </div>
-                        <div className="detailed-status">
-                            <p>.detailed-status</p>
-                        </div>
+                        </p>
                     </div>
                 );
             }
