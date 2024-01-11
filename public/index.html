@@ -37,6 +37,24 @@
                 width: 100%;
                 height: 50svh;
             }
+
+            .mybox-1 {
+                background-color: #563acc;
+                width: 100px;
+                height: 100px;
+            }
+
+            .mybox-2 {
+                background-color: color-mix(in srgb, #563acc 60%, white);
+                width: 100px;
+                height: 100px;
+            }
+
+            .mybox-3 {
+                background-color: #858afa;
+                width: 100px;
+                height: 100px;
+            }
         </style>
 
         <script type="text/babel">
@@ -95,6 +113,9 @@
             function PreviewArea() {
                 return (
                     <div>
+                        <div className="mybox-1" />
+                        <div className="mybox-2" />
+                        <div className="mybox-3" />
                         <div>
                             I made this to create a custom theme for a Mastodon
                             instance. It barely works, but maybe this is still

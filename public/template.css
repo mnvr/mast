@@ -1,29 +1,23 @@
 /*
  The static part of the template.
 
- This assumes that the CSS variables '--mast-*' used below have already been
+ This assumes that the CSS variables '--mast-in-*' used below have already been
  defined in the :root element prior to including the following CSS. However, it
  includes defaults (same as the default Mastodon theme, as of Jan 2024) in case
  they're not defined so that this CSS file is useable standalone too.
  */
 :root {
-    --mast-x1-color: var(--mast-x1, blue);
-}
+    --mast-base-color: var(--mast-in-base, #282c37);
+    --mast-primary-color: var(--mast-in-primary, #9baec8);
+    --mast-secondary-color: var(--mast-in-secondary, #d9e1e8);
+    --mast-highlight-color: var(--mast-in-highlight, #6364ff);
 
-:root {
-    --mast-base-color: #282c37;
-    --mast-primary-color: #9baec8;
-    --mast-secondary-color: #d9e1e8;
-    --mast-highlight-color: #6364ff;
-
-    /* white */
-    --mast-primary-text-color: #ffffff;
-    /* blurple-600, // Iris */
-    --mast-blurple-600: #563acc;
-    /* blurple-300, maybe */
-    --mast-button-tertiary: #858afa;
-    /* grey-600 */
-    --mast-button-secondary-focus-color: #4e4c5a;
+    /* in mastodon source: white */
+    --mast-primary-text-color: var(--mast-in-primary-text, #ffffff);
+    /*in mastodon source: blurple-600, // Iris */
+    --mast-blurple-600: var(--mast-in-tint, #563acc);
+    /* in mastodon source: blurple-300, maybe */
+    --mast-button-tertiary: var(--mast-in-tint-300, #858afa);
 }
 
 /*
@@ -101,14 +95,30 @@
     );
 
     /* lighten(lighten(primary-color, 20%), 4%) */
-    --mast-darker-text-color: #a8b9cf;
-    /* TODO */
+    /* 4% of 20% is 23.2, almost 24% */
+    /* --mast-darker-text-color: #a8b9cf; */
     --mast-darker-text-color: color-mix(
         in srgb,
         var(--mast-primary-color),
         white 24%
     );
 }
+
+/* Some more derived colors
+
+   These are aliases, but the separate variables are kept around in case we need
+   to separately customize them in the future */
+:root {
+    /* in mastodon source: grey-600 */
+    /* original value was: */
+    /* --mast-button-secondary-focus-color: #4e4c5a; */
+    /* redefining it to a similar derived color, can be reverted to be
+       standalone if this not enough */
+    --mast-button-secondary-focus-color: var(--mast-base-color-l12);
+}
+
+/* Keep all variable declaration above this */
+/* ----------- TEMPLATE STARTS ------------ */
 
 :root {
     --dropdown-border-color: var(--mast-base-color-l12) !important;
