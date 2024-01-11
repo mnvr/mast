@@ -18,9 +18,7 @@
     </head>
     <body>
         <div id="root"></div>
-        <script type="application/text" id="template-prefix">
-            Test Prefix
-        </script>
+        <script src="prefix.js"></script>
         <script type="text/babel">
             function MyApp() {
                 const [template, setTemplate] = React.useState("...");
@@ -33,11 +31,11 @@
                         if (!response.ok) {
                             setErrorMessage("Failed to fetch base template");
                         } else {
+                            const prefixText = generatePrefix({
+                                baseColor: "blue"
+                            });
                             const templateText = await response.text();
-                            const prefixElement =
-                                document.getElementById("template-prefix");
-                            const prefixText = prefixElement.innerText;
-                            setTemplate(prefixText + "\n" + templateText);
+                            setTemplate([prefixText, templateText].join("\n"));
                         }
                     }
                     fetchData();
