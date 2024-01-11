@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mastodon Color Theme Creator</title>
+
+        <!--
+        This is not a good way to use React: (a) It uses a large development
+        build of React, and (b) compiles JSX with Babel in the browser.
+
+        Let's see if this is enough for our needs though, if we can avoid a
+        framework for our simple page. We can easily fix (a) at least later on.
+        -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function MyApp() {
+                return <h1>Hello, World!</h1>;
+            }
+
+            const container = document.getElementById("root");
+            const root = ReactDOM.createRoot(container);
+            root.render(<MyApp />);
+        </script>
+    </body>
+</html>
