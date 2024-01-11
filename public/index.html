@@ -19,7 +19,30 @@
         <div id="root"></div>
         <script type="text/babel">
             function MyApp() {
-                return <h1>Hello, World!</h1>;
+                const [template, setTemplate] = React.useState("...");
+                const [errorMessage, setErrorMessage] = React.useState("");
+
+                React.useEffect(() => {
+                    async function fetchData() {
+                        console.info("Fetching template");
+                        const response = await fetch("template.css.txt");
+                        if (!response.ok) {
+                            setErrorMessage("Failed to fetch base template");
+                        } else {
+                            const text = await response.text()
+                            console.info(text);
+                            setTemplate(text);
+                        }
+                    }
+                    fetchData();
+                }, []);
+
+                return (
+                    <div>
+                        <h1>Hello, World!</h1>
+                        <p>{errorMessage ? errorMessage : template}</p>
+                    </div>
+                );
             }
 
             const container = document.getElementById("root");
