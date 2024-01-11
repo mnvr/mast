@@ -1,0 +1,6 @@
+/* This assumes that the CSS variables '--mast-*' used below have already been
+   defined in the :root element prior to including the following CSS. */
+
+* {
+    color: black;
+}

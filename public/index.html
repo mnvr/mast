@@ -17,6 +17,9 @@
     </head>
     <body>
         <div id="root"></div>
+        <script type="application/text" id="template-prefix">
+            Test Prefix
+        </script>
         <script type="text/babel">
             function MyApp() {
                 const [template, setTemplate] = React.useState("...");
@@ -25,13 +28,15 @@
                 React.useEffect(() => {
                     async function fetchData() {
                         console.info("Fetching template");
-                        const response = await fetch("temeplate.css.txt");
+                        const response = await fetch("template.css");
                         if (!response.ok) {
                             setErrorMessage("Failed to fetch base template");
                         } else {
-                            const text = await response.text();
-                            console.info(text);
-                            setTemplate(text);
+                            const templateText = await response.text();
+                            const prefixElement =
+                                document.getElementById("template-prefix");
+                            const prefixText = prefixElement.innerText;
+                            setTemplate(prefixText + "\n" + templateText);
                         }
                     }
                     fetchData();
@@ -51,7 +56,7 @@
                 );
             }
 
-            function ErrorMessage({msg}) {
+            function ErrorMessage({ msg }) {
                 return <p style={{ color: "crimson" }}>{`Error: ${msg}`}</p>;
             }
 
