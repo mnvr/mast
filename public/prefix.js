@@ -1,5 +1,6 @@
 function generatePrefix({ baseColor }) {
-    return `
+    return `/* Paste this as the Custom CSS in Server settings > Appearance */
+
 :root {
     --mast-x1: ${baseColor ?? "red"};
 }

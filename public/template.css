@@ -1,6 +1,10 @@
 /* This assumes that the CSS variables '--mast-*' used below have already been
    defined in the :root element prior to including the following CSS. */
 
+:root {
+    --mast-x1-color: var(--mast-x1, blue);
+}
+
 * {
-    color: black;
+    color: var(--mast-x1-color);
 }
