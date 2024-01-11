@@ -43,7 +43,25 @@
     --mast-darker-text-color: ##a8b9cf;
     /* grey-600 */
     --mast-button-secondary-focus-color: #4e4c5a;
+}
 
+/*
+ Use CSS mix to generate the derived colors.
+
+ Mastodon itself does this using the SASS lighten and darken macros. We don't
+ have access to those here, and we instead use the color-mix CSS function to do
+ this at render time. To lighten, we mix with white; to darken, with black.
+
+ Currently (Jan 2024), color-mix has around 86% caniuse. Good enough, but not
+ universal, and if you need to cover such unsupported browsers, replace the
+ color-mix functions in this section with their equivalent result for the theme
+ you're trying to achieve.
+*/
+:root {
+    --mast-base-color-l04: color-mix(in srgb, var(--mast-base-color) 96%, white);
+}
+
+:root {
     --dropdown-border-color: var(--mast-base-color-l12) !important;
     --dropdown-background-color: var(--mast-base-color-l04) !important;
     --dropdown-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25),
