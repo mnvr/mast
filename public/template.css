@@ -26,31 +26,6 @@
     --mast-button-secondary-focus-color: #4e4c5a;
 }
 
-/* We'll override them again below, but retain their hardcoded values for
-   reference */
-:root {
-    /* lighten(base-color, 2%) */
-    --mast-base-color-l02: #2c313d;
-    /* lighten(base-color, 4%) */
-    --mast-base-color-l04: #313543;
-    /* lighten(base-color, 8%); */
-    --mast-base-color-l08: #393f4f;
-    /* lighten(base-color, 12%) */
-    --mast-base-color-l12: #42485a;
-    /* lighten(base-color, 26%); */
-    --mast-base-color-l26: #606984;
-    /* darken(base-color, 4%)}; */
-    --mast-base-color-d04: #1f232b;
-    /* darken(base-color, 8%) */
-    --mast-base-color-d08: #17191f;
-    /* lighten(secondary-color, 6%) */
-    --mast-secondary-text-color: #707b97;
-    /* darken(highlight-color, 8%) */
-    --mast-highlight-text-color: #8c8dff;
-    /* lighten(lighten(primary-color, 20%), 4%) */
-    --mast-darker-text-color: #a8b9cf;
-}
-
 /*
  Use CSS mix to generate the derived colors.
 
@@ -73,7 +48,66 @@
     support currently, but this might be a viable option in the future.
 */
 :root {
+    /* lighten(base-color, 2%) */
+    /* --mast-base-color-l02: #2c313d; */
+    --mast-base-color-l02: color-mix(in srgb, var(--mast-base-color), white 2%);
+
+    /* lighten(base-color, 4%) */
+    /* --mast-base-color-l04: #313543; */
     --mast-base-color-l04: color-mix(in srgb, var(--mast-base-color), white 4%);
+
+    /* lighten(base-color, 8%) */
+    /* --mast-base-color-l08: #393f4f; */
+    --mast-base-color-l08: color-mix(in srgb, var(--mast-base-color), white 8%);
+
+    /* lighten(base-color, 12%) */
+    /* --mast-base-color-l12: #42485a; */
+    --mast-base-color-l12: color-mix(
+        in srgb,
+        var(--mast-base-color),
+        white 12%
+    );
+
+    /* lighten(base-color, 26%) */
+    /* --mast-base-color-l26: #606984; */
+    --mast-base-color-l26: color-mix(
+        in srgb,
+        var(--mast-base-color),
+        white 26%
+    );
+
+    /* darken(base-color, 4%) */
+    /* --mast-base-color-d04: #1f232b; */
+    --mast-base-color-d04: color-mix(in srgb, var(--mast-base-color), black 4%);
+
+    /* darken(base-color, 8%) */
+    /* --mast-base-color-d08: #17191f; */
+    --mast-base-color-d08: color-mix(in srgb, var(--mast-base-color), black 8%);
+
+    /* lighten(secondary-color, 6%) */
+    /* --mast-secondary-text-color: #707b97; */
+    --mast-secondary-text-color: color-mix(
+        in srgb,
+        var(--mast-secondary-color),
+        white 6%
+    );
+
+    /* darken(highlight-color, 8%) */
+    /* --mast-highlight-text-color: #8c8dff; */
+    --mast-highlight-text-color: color-mix(
+        in srgb,
+        var(--mast-highlight-color),
+        black 8%
+    );
+
+    /* lighten(lighten(primary-color, 20%), 4%) */
+    --mast-darker-text-color: #a8b9cf;
+    /* TODO */
+    --mast-darker-text-color: color-mix(
+        in srgb,
+        var(--mast-primary-color),
+        white 24%
+    );
 }
 
 :root {
