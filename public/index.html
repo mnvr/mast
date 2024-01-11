@@ -76,11 +76,40 @@
             }
 
             function ErrorMessage({ msg }) {
-                return <p class="error">{`Error: ${msg}`}</p>;
+                return <p className="error">{`Error: ${msg}`}</p>;
             }
 
             function Themer({ template }) {
+                return (
+                    <>
+                        <GeneratedCSS template={template} />
+                        <PreviewArea />
+                    </>
+                );
+            }
+
+            function GeneratedCSS({ template }) {
                 return <textarea value={template} />;
+            }
+
+            function PreviewArea() {
+                return (
+                    <div>
+                        <div>
+                            This is a minimal preview, meant as a sanity check.
+                            The Mastodon CSS is huge (almost 3000 lines), and
+                            the full effects of these customizations can only be
+                            seen on an actual Mastodon instance. You could,
+                            however, run a test instance in a GitHub codespace
+                            using the instructions in the Mastodon README to
+                            preview these changes before applying them to your
+                            main instance.
+                        </div>
+                        <div className="detailed-status">
+                            <p>.detailed-status</p>
+                        </div>
+                    </div>
+                );
             }
 
             const container = document.getElementById("root");

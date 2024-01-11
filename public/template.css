@@ -16,7 +16,7 @@
     --mast-secondary-color: #d9e1e8;
     --mast-highlight-color: #6364ff;
     /* lighten(base-color, 2%) */
-    --mast-base-color-l02: ##2c313d;
+    --mast-base-color-l02: #2c313d;
     /* lighten(base-color, 4%) */
     --mast-base-color-l04: #313543;
     /* lighten(base-color, 8%); */
