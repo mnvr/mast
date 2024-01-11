@@ -25,11 +25,11 @@
                 React.useEffect(() => {
                     async function fetchData() {
                         console.info("Fetching template");
-                        const response = await fetch("template.css.txt");
+                        const response = await fetch("temeplate.css.txt");
                         if (!response.ok) {
                             setErrorMessage("Failed to fetch base template");
                         } else {
-                            const text = await response.text()
+                            const text = await response.text();
                             console.info(text);
                             setTemplate(text);
                         }
@@ -38,11 +38,21 @@
                 }, []);
 
                 return (
-                    <div>
-                        <h1>Hello, World!</h1>
-                        <p>{errorMessage ? errorMessage : template}</p>
-                    </div>
+                    <main>
+                        <h2>Mastodon Color Theme Generator</h2>
+                        <p>
+                            {errorMessage ? (
+                                <ErrorMessage msg={errorMessage} />
+                            ) : (
+                                template
+                            )}
+                        </p>
+                    </main>
                 );
+            }
+
+            function ErrorMessage({msg}) {
+                return <p style={{ color: "crimson" }}>{`Error: ${msg}`}</p>;
             }
 
             const container = document.getElementById("root");
