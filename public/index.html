@@ -55,7 +55,8 @@
             }
 
             .hint {
-                font-size: smaller;
+                font-size: small;
+                opacity: 0.8;
                 font-style: italic;
             }
 
@@ -169,16 +170,16 @@
                 return (
                     <div>
                         <hr />
-                        <h4>Fill in your colors here</h4>
-                        <p className="hint">
-                            You can input anything that is a valid CSS color.
-                            There is no validation, so be careful: invalid
-                            inputs will produce a broken CSS.
-                        </p>
+                        <h3>Colors</h3>
                         <div className="color-input-container">
-                            <label for="base-color">Base color</label>
+                            <label htmlFor="base-color">Base</label>
                             <input type="text" id="base-color"></input>
                         </div>
+                        <p className="hint">
+                            You can enter anything that is a valid CSS color.
+                            There is no validation: invalid inputs will produce
+                            broken CSS.
+                        </p>
                     </div>
                 );
             }
@@ -187,8 +188,8 @@
                 return (
                     <div>
                         <hr />
-                        <label for="generated-css">
-                            <h4>Generated CSS</h4>
+                        <label htmlFor="generated-css">
+                            <h3>Generated CSS</h3>
                         </label>
                         <textarea
                             id="generated-css"
@@ -203,7 +204,7 @@
                 return (
                     <div>
                         <hr />
-                        <h4>About</h4>
+                        <h3>About</h3>
                         <p>
                             I made this to create a custom theme for a Mastodon
                             instance. It barely works, and{" "}
