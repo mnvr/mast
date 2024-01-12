@@ -167,13 +167,14 @@
             }
 
             function Inputs() {
+                const id = React.useId();
                 return (
                     <div>
                         <hr />
                         <h3>Colors</h3>
                         <div className="color-input-container">
-                            <label htmlFor="base-color">Base</label>
-                            <input type="text" id="base-color"></input>
+                            <label htmlFor={`${id}-base}`}>Base</label>
+                            <input type="text" id={`${id}-base}`}></input>
                         </div>
                         <p className="hint">
                             You can enter anything that is a valid CSS color.
@@ -185,17 +186,14 @@
             }
 
             function GeneratedCSS({ template }) {
+                const id = React.useId();
                 return (
                     <div>
                         <hr />
-                        <label htmlFor="generated-css">
+                        <label htmlFor={id}>
                             <h3>Generated CSS</h3>
                         </label>
-                        <textarea
-                            id="generated-css"
-                            value={template}
-                            readOnly={true}
-                        />
+                        <textarea id={id} value={template} readOnly={true} />
                     </div>
                 );
             }
