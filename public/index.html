@@ -31,6 +31,7 @@
 
             body {
                 margin: 1em;
+                margin-block-end: 2em;
             }
 
             p {
@@ -45,10 +46,6 @@
                 }
             }
 
-            hr {
-                opacity: 0.3;
-            }
-
             .error {
                 color: crimson;
             }
@@ -59,24 +56,56 @@
                 font-style: italic;
             }
 
-            ul.color-inputs {
-                list-style: none;
-                padding-inline-start: 0;
+            fieldset {
                 width: min(50rem, 100%);
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                border: 1px solid currentColor;
+            }
+
+            fieldset legend {
+                margin-inline: 0.5rem;
+                padding-inline: 0.5rem;
+            }
+
+            ul.color-inputs {
+                padding-inline: 1rem;
+
+                list-style: none;
+                margin-block-start: 0;
             }
 
             ul.color-inputs li {
                 display: flex;
-                gap: 1rem;
+                align-items: center;
+                gap: 1ch;
+                margin-block: 0.4rem;
+            }
+
+            ul.color-inputs li label {
+                width: 5rem;
+            }
+
+            ul.color-inputs li input {
+                font-family: monospace;
+                height: 1.4rem;
+                box-sizing: border-box;
+                border: 1px solid currentColor;
             }
 
             .color-preview {
-                width: 100px;
-                height: 100px;
+                width: 1.4rem;
+                height: 1.4rem;
             }
 
             textarea {
-                width: min(50rem, 100%);
+                font-family: monospace;
+                border: 0;
+                margin: 2px;
+                box-sizing: border-box;
+                width: 100%;
                 height: 50svh;
 
                 @media (prefers-color-scheme: dark) {
@@ -177,19 +206,17 @@
 
             function Instructions() {
                 return (
-                    <div>
-                        <ol>
-                            <li>Fill in your colors</li>
-                            <li>
-                                Paste the generated CSS into the Custom CSS
-                                setting of your Mastodon server
-                            </li>
-                            <li>Profit</li>
-                            <li>
-                                <i>gru </i>Profit?!?
-                            </li>
-                        </ol>
-                    </div>
+                    <ol>
+                        <li>Fill in your colors</li>
+                        <li>
+                            Paste the generated CSS into the Custom CSS setting
+                            of your Mastodon server
+                        </li>
+                        <li>Profit</li>
+                        <li>
+                            <i>gru </i>Profit?!?
+                        </li>
+                    </ol>
                 );
             }
 
@@ -209,9 +236,10 @@
 
                 return (
                     <div>
-                        <hr />
-                        <h3>Colors</h3>
                         <fieldset>
+                            <legend>
+                                <h3>Colors</h3>
+                            </legend>
                             <ul className="color-inputs">
                                 <li>{makeColorInput("base")}</li>
                                 <li>{makeColorInput("primary")}</li>
@@ -268,21 +296,22 @@
                 const value = [prefixText, templateText].join("\n");
 
                 return (
-                    <div>
-                        <hr />
-                        <label htmlFor={id}>
-                            <h3>Generated CSS</h3>
-                        </label>
+                    <fieldset>
+                        <legend>
+                            <label htmlFor={id}>
+                                <h3>Generated CSS</h3>
+                            </label>
+                        </legend>
+
                         <textarea id={id} value={value} readOnly={true} />
-                    </div>
+                    </fieldset>
                 );
             }
 
             function About() {
                 return (
                     <div>
-                        <hr />
-                        <h3>About</h3>
+                        <h4>About</h4>
                         <p>
                             I made this to create a custom theme for a Mastodon
                             instance. It barely works, and{" "}
@@ -292,7 +321,9 @@
                         </p>
                         <p>
                             More info & source code is at{" "}
-                            <a href="">https://github.com/mnvr/mast</a>.
+                            <a href="https://github.com/mnvr/mast">
+                                github.com/mnvr/mast
+                            </a>
                         </p>
                     </div>
                 );
