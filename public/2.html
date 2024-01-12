@@ -10,9 +10,47 @@
             :root {
                 color-scheme: light dark;
             }
+            * {
+                /* border: 1px dotted aliceblue; */
+            }
+            div.outer {
+                width: min(300px, 100%);
+                background-color: pink;
+            }
+            div.list-item {
+                background-color: blue;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .a {
+                background-color: chocolate;
+                width: 100px;
+                height: 100px;
+                flex: 1;
+            }
+            .b {
+                background-color: crimson;
+                width: 100px;
+                height: 100px;
+                flex: 1;
+            }
+            .c {
+                background-color: blueviolet;
+                width: 100px;
+                height: 100px;
+                flex: 1;
+            }
         </style>
 
-        <label>Label</label>
-        <input value="Value" />
+        <div class="outer">
+            <div class="list-item">
+                <!-- <label>Label</label> -->
+                <!-- <input value="Value" /> -->
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+            </div>
+        </div>
     </body>
 </html>
