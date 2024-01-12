@@ -123,18 +123,19 @@
 
         <script type="text/babel">
             function MyApp() {
-                const [templateText, setTemplateText] = React.useState("");
-                const [errorMessage, setErrorMessage] = React.useState("");
+                const [state, setState] = React.useState();
 
                 React.useEffect(() => {
                     async function fetchData() {
-                        console.info("Fetching template");
                         const response = await fetch("template.css");
                         if (!response.ok) {
-                            setErrorMessage("Failed to fetch base template");
+                            setState({
+                                status: "error",
+                                message: "Failed to fetch base template",
+                            });
                         } else {
                             const templateText = await response.text();
-                            setTemplateText(templateText);
+                            setState({ status: "success", templateText });
                         }
                     }
                     fetchData();
@@ -143,13 +144,15 @@
                 return (
                     <main>
                         <h2>Mastodon Color Theme Generator</h2>
-                        <>
-                            {errorMessage ? (
-                                <ErrorMessage msg={errorMessage} />
-                            ) : (
-                                <Themer templateText={templateText} />
-                            )}
-                        </>
+                        {state && (
+                            <>
+                                {state.status === "error" ? (
+                                    <ErrorMessage msg={state.message} />
+                                ) : (
+                                    <Themer templateText={state.templateText} />
+                                )}
+                            </>
+                        )}
                     </main>
                 );
             }
