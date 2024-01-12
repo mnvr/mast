@@ -11,7 +11,7 @@
     --mast-primary-color: var(--mast-in-primary, #9baec8);
     --mast-secondary-color: var(--mast-in-secondary, #d9e1e8);
     --mast-highlight-color: var(--mast-in-highlight, #6364ff);
-    --mast-primary-text-color: var(--mast-in-primary-text, #ffffff);
+    --mast-primary-text-color: var(--mast-in-text, #ffffff);
     /* in mastodon source this is called blurple-600 "Iris" */
     --mast-tint-color: var(--mast-in-tint, #563acc);
 }
