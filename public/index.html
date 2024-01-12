@@ -104,6 +104,7 @@
                 tint,
             }) {
                 return `/* Add this to Server settings > Appearance > Custom CSS */
+
 :root {
     --mast-in-base: ${base ?? defaultColors.base};
     --mast-in-primary: ${primary ?? defaultColors.primary};
@@ -113,6 +114,10 @@
     --mast-in-tint: ${tint ?? defaultColors.tint};
 }
 `;
+            }
+
+            function capitalize(s) {
+                return s.slice(0, 1).toUpperCase() + s.slice(1);
             }
         </script>
 
@@ -186,14 +191,18 @@
             }
 
             function Inputs({ colors, setColors }) {
-                const updateColor = (name) => {
-                    return (color) => {
-                        setColors({
-                            ...colors,
-                            [name]: color,
-                        });
-                    };
-                };
+                const makeColorInput = (name) => (
+                    <ColorInput
+                        label={capitalize(name)}
+                        color={colors[name]}
+                        setColor={(color) => {
+                            setColors({
+                                ...colors,
+                                [name]: color,
+                            });
+                        }}
+                    />
+                );
 
                 return (
                     <div>
@@ -201,13 +210,12 @@
                         <h3>Colors</h3>
                         <fieldset>
                             <ul className="color-inputs">
-                                <li>
-                                    <ColorInput
-                                        name="Base"
-                                        color={colors.base}
-                                        setColor={updateColor("base")}
-                                    />
-                                </li>
+                                <li>{makeColorInput("base")}</li>
+                                <li>{makeColorInput("primary")}</li>
+                                <li>{makeColorInput("secondary")}</li>
+                                <li>{makeColorInput("highlight")}</li>
+                                <li>{makeColorInput("text")}</li>
+                                <li>{makeColorInput("tint")}</li>
                             </ul>
                         </fieldset>
                         <p className="hint">
@@ -219,19 +227,23 @@
                 );
             }
 
-            function ColorInput({ name, color, setColor, children }) {
+            function ColorInput({ label, color, setColor }) {
                 const id = React.useId();
 
                 const handleChange = (e) => {
                     const newValue = e.target.value;
-                    console.log(newValue);
                     setColor(newValue);
                 };
 
                 return (
                     <>
-                        <label htmlFor={id}>{name}</label>
-                        <input id={id} type="text" onChange={handleChange} />
+                        <label htmlFor={id}>{label}</label>
+                        <input
+                            id={id}
+                            type="text"
+                            value={color}
+                            onChange={handleChange}
+                        />
                         <ColorPreview color={color} />
                     </>
                 );
