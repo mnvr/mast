@@ -63,6 +63,11 @@
                 padding-inline: 0.5rem;
             }
 
+            button.copy {
+                margin-inline: 1rem;
+                margin-block-end: 0.5rem;
+            }
+
             ul.color-inputs {
                 padding-inline: 1rem;
                 width: min(500px, 100%);
@@ -294,12 +299,25 @@
                 const prefixText = generatePrefix(colors);
                 const value = [prefixText, templateText].join("\n");
 
+                const copyToClipboard = () => {
+                    navigator.clipboard.writeText(value);
+                };
+
                 return (
-                    <fieldset>
+                    <fieldset className="generated-css">
                         <legend>
                             <label htmlFor={id}>
-                                <h3>Generated CSS</h3>
+                                <h3 style={{ display: "inline-block" }}>
+                                    Generated CSS
+                                </h3>
                             </label>
+                            <button
+                                className="copy"
+                                type="button"
+                                onClick={copyToClipboard}
+                            >
+                                Copy
+                            </button>
                         </legend>
 
                         <textarea id={id} value={value} readOnly={true} />
@@ -320,7 +338,10 @@
                         </p>
                         <p>
                             More info & source code at{" "}
-                            <a target="_blank" href="https://github.com/mnvr/mast">
+                            <a
+                                target="_blank"
+                                href="https://github.com/mnvr/mast"
+                            >
                                 github.com/mnvr/mast
                             </a>
                         </p>
