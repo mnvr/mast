@@ -994,7 +994,6 @@ body.embed {
 
 .onboarding__link {
     background: var(--mast-base-color-l04) !important;
-    border-radius: 8px;
     color: var(--mast-highlight-text-color) !important;
 }
 
@@ -1016,7 +1015,6 @@ body.embed {
 
 .follow-recommendations {
     background: var(--mast-base-color-d04) !important;
-    border-radius: 8px;
 }
 
 .tip-carousel {
@@ -1030,7 +1028,6 @@ body.embed {
 
 .copy-paste-text {
     background: var(--mast-base-color-l04) !important;
-    border-radius: 8px;
     border: 1px solid var(--mast-base-color-l08) !important;
     color: var(--mast-primary-text-color) !important;
 }
@@ -1067,7 +1064,6 @@ body.embed {
 
 .follow-recommendations {
     background: var(--mast-base-color-d04) !important;
-    border-radius: 8px;
 }
 
 .tip-carousel {
@@ -1081,7 +1077,6 @@ body.embed {
 
 .copy-paste-text {
     background: var(--mast-base-color-l04) !important;
-    border-radius: 8px;
     border: 1px solid var(--mast-base-color-l08) !important;
     color: var(--mast-primary-text-color) !important;
 }
@@ -1919,7 +1914,6 @@ a.status-card:active .status-card__description {
 
 .list-editor {
     background: var(--mast-base-color) !important;
-    border-radius: 8px;
 }
 
 .list-editor h4 {
@@ -1928,7 +1922,6 @@ a.status-card:active .status-card__description {
 
 .list-adder {
     background: var(--mast-base-color) !important;
-    border-radius: 8px;
 }
 
 .list-adder__account,
@@ -2398,10 +2391,6 @@ a.status-card:active .status-card__description {
     border-color: var(--mast-highlight-text-color) !important;
 }
 
-.poll__input.checkbox {
-    border-radius: 4px;
-}
-
 .modal-layout {
     background: var(--mast-base-color) !important;
 }
@@ -2509,10 +2498,6 @@ a.status-card:active .status-card__description {
     background-color: #1d2028;
 }
 
-.admin-wrapper .sidebar ul a.selected {
-    border-radius: 4px 0 0;
-}
-
 .admin-wrapper .sidebar ul ul {
     background: var(--mast-base-color-d04) !important;
 }
@@ -2587,11 +2572,32 @@ a.status-card:active .status-card__description {
 }
 
 .admin-wrapper .content hr {
-    border-bottom: 1px solid rgba(96, 105, 132, 0.6);
+    border-bottom: 1px solid var(--mast-base-color-l08) !important;
 }
 
 .admin-wrapper .content hr.spacer {
     border: 0;
+}
+
+.admin-wrapper .sidebar ul a,
+.admin-wrapper .sidebar ul ul a {
+    border-bottom: 1px solid var(--mast-base-color-l04) !important;
+}
+
+.admin-wrapper .sidebar > ul.visible {
+    background: var(--mast-base-color-d08) !important;
+}
+
+.admin-wrapper .sidebar ul a:hover {
+    background: var(--mast-base-color-l08) !important;
+}
+
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+    color: var(--mast-base-color-d08) !important;
+}
+
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a:hover {
+    color: var(--mast-primary-color) !important;
 }
 
 body .muted-hint,
