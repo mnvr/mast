@@ -20,7 +20,7 @@
         <div id="root"></div>
 
         <!-- Uncomment the link tag below to test out the effects of the CSS -->
-        <link rel="stylesheet" href="template.css" />
+        <!-- <link rel="stylesheet" href="template.css" /> -->
 
         <!-- Our own CSS -->
         <style>
@@ -37,14 +37,6 @@
 
             p {
                 max-width: 33rem;
-            }
-
-            @media (prefers-color-scheme: dark) {
-                /* The purple styling for visited links is not visible in the
-                   browser's default dark mode. */
-                a:visited {
-                    color: mediumpurple;
-                }
             }
 
             .error {
@@ -94,13 +86,15 @@
 
             ul.color-inputs li input {
                 font-family: monospace;
+                font-size: 0.9rem;
+                padding: 0.3rem;
                 flex-grow: 1;
                 flex-shrink: 1;
                 flex-basis: 0px;
                 max-width: 15rem;
                 height: 1.4rem;
                 box-sizing: border-box;
-                border: 1px solid currentColor;
+                border: 1px dotted currentColor;
             }
 
             .color-preview {
@@ -115,10 +109,6 @@
                 box-sizing: border-box;
                 width: 100%;
                 height: 50svh;
-
-                @media (prefers-color-scheme: dark) {
-                    background-color: gainsboro;
-                }
             }
         </style>
 
