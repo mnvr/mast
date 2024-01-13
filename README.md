@@ -61,3 +61,4 @@ Mastodon itself generates the CSS from SASS files, which can be found in the
 Mastodon source under
 [app/javascript/styles/](https://github.com/mastodon/mastodon/tree/main/app/javascript/styles).
 
+You might also find this [CSS color list](https://mrmr.io/css-colors) handy.
