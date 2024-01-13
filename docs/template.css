@@ -1358,6 +1358,16 @@ a.status-card:active .status-card__description {
     border-bottom: 1px solid var(--mast-base-color-l08) !important;
 }
 
+.column-subheading {
+    background: var(--mast-base-color-l08) !important;
+}
+
+.drawer__header,
+.drawer__inner,
+.drawer__inner__mastodon {
+    background-color: var(--mast-base-color-l08) !important;
+}
+
 .column-settings__outer {
     background: var(--mast-base-color-l08) !important;
 }
