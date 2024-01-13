@@ -73,6 +73,8 @@
 
             ul.color-inputs {
                 padding-inline: 1rem;
+                width: min(500px, 100%);
+
 
                 list-style: none;
                 margin-block-start: 0;
@@ -80,17 +82,23 @@
 
             ul.color-inputs li {
                 display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
                 align-items: center;
                 gap: 1ch;
                 margin-block: 0.4rem;
             }
 
             ul.color-inputs li label {
-                width: 5rem;
+                flex-basis: 5rem;
             }
 
             ul.color-inputs li input {
                 font-family: monospace;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0px;
+                max-width: 15rem;
                 height: 1.4rem;
                 box-sizing: border-box;
                 border: 1px solid currentColor;
@@ -273,6 +281,7 @@
                         <input
                             id={id}
                             type="text"
+                            size="4"
                             value={color}
                             onChange={handleChange}
                         />
@@ -318,10 +327,10 @@
                             instance. It barely works, and{" "}
                             <b>will likely produce a bad theme</b>, but maybe
                             that is still useful for someone, say as a starting
-                            point, so I'm releasing it.
+                            point.
                         </p>
                         <p>
-                            More info & source code is at{" "}
+                            More info & source code at{" "}
                             <a href="https://github.com/mnvr/mast">
                                 github.com/mnvr/mast
                             </a>
