@@ -113,8 +113,11 @@
        This is going to be quite bad (since unlike the other colors for text
        etc, the tint color usually has a lot of chroma which'll get lost this
        way). So keeping the variable separate for future customization */
-    --mast-button-tertiary: color-mix(in srgb, var(--mast-tint-color) 60%, white);
-
+    --mast-button-tertiary: color-mix(
+        in srgb,
+        var(--mast-tint-color) 60%,
+        white
+    );
 
     /* in mastodon source: grey-600 */
     /* original value was: */
@@ -167,7 +170,7 @@ html {
 }
 
 body {
-    background: #191b22;
+    background: var(--mast-base-color-d04) !important;
     color: var(--mast-primary-text-color) !important;
 }
 
@@ -682,13 +685,11 @@ body.embed {
 .compose-form .autosuggest-input,
 .compose-form .spoiler-input {
     color: var(--mast-base-color) !important;
-    background: var(--mast-primary-text-color) !important;
 }
 
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .spoiler-input__input {
     color: var(--mast-base-color) !important;
-    background: var(--mast-primary-text-color) !important;
 }
 
 .compose-form .autosuggest-textarea__textarea::-ms-input-placeholder,
@@ -722,7 +723,6 @@ body.embed {
 .compose-form .compose-form__publish .compose-form__publish-button-wrapper,
 .character-counter {
     color: var(--mast-base-color) !important;
-    background: var(--mast-primary-text-color) !important;
 }
 
 .sign-in-banner p {
@@ -755,7 +755,7 @@ body.embed {
 .detailed-status .status__content,
 .detailed-status .status__prepend,
 .detailed-status__meta {
-    color: var(--mast-base-color) !important;
+    color: var(--mast-primary-text-color) !important;
 }
 
 .status--in-thread .status__content,
@@ -939,6 +939,10 @@ body.embed {
     background: var(--mast-base-color-d08) !important;
 }
 
+.layout-single-column .ui__header {
+    border-bottom: 1px solid var(--mast-base-color-l08) !important;
+}
+
 .tabs-bar__wrapper {
     background: var(--mast-base-color-d08) !important;
 }
@@ -971,6 +975,10 @@ body.embed {
 
 .copy-paste-text.copied {
     border-color: #79bd9a;
+}
+
+.column-back-button {
+    background: transparent !important;
 }
 
 .column-link {
@@ -1288,15 +1296,16 @@ a.status-card:active .status-card__description {
 }
 
 .column-header > .column-header__back-button {
-    color: var(--mast-highlight-text-color) !important;
+    color: var(--mast-secondary-text-color) !important;
 }
 
 .column-header__button {
     color: var(--mast-primary-color) !important;
+    background: transparent !important;
 }
 
 .column-header__button:hover {
-    color: var(--mast-darker-text-color) !important;
+    color: var(--mast-highlight-text-color) !important;
 }
 
 .column-header__button.active {
@@ -2709,6 +2718,17 @@ body .warning-hint,
 
 .ellipsized-ip {
     color: var(--mast-secondary-color) !important;
+}
+
+.notification__filter-bar button.active::before,
+.notification__filter-bar a.active::before,
+.account__section-headline button.active::before,
+.account__section-headline a.active::before {
+    background: var(--mast-highlight-color) !important;
+}
+
+.account__header__bio .account__header__fields {
+    background: var(--mast-base-color-l08) !important;
 }
 
 .admin-account-bio .account__header__fields,
