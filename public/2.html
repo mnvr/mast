@@ -26,17 +26,17 @@
             }
             .a {
                 background-color: chocolate;
-                width: 5rem;
+                flex-basis: 5rem;
                 /* flex: 1; */
             }
             .b {
-                box-sizing: border-box;
+                /* box-sizing: border-box; */
                 background-color: crimson;
-                width: 100px;
+                /* width: 100px; */
                 /* flex: 1; */
                 flex-grow: 1;
                 flex-shrink: 1;
-                flex-basis: 0;
+                flex-basis: 0px;
             }
             .c {
                 background-color: blueviolet;
@@ -50,7 +50,7 @@
             <div class="list-item">
                 <label class="a">Label</label>
                 <!-- <input value="Value" /> -->
-                <input class="b"/>
+                <input class="b"/ size="4">
                 <div class="c"></div>
             </div>
         </div>
