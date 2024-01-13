@@ -2,6 +2,8 @@
 
 Mastodon Theme Generator
 
+Live version: [mnvr.github.io/mast](https://mnvr.github.io/mast/)
+
 This is not a solid solution, it is just a prototype, and will likely not
 produce CSS that works in all cases. If you do use it, please try to ensure that
 there is good contrast between text and background.
@@ -40,11 +42,12 @@ To login to your test instance, use
 
 ## Running the generator locally
 
-The site is a single† HTML file, hosted on GitHub pages. To run locally, you can
-clone the repository and open the HTML file in your browser.
+The site is a [single† HTML file](docs/index.html), hosted on GitHub pages. To
+run locally, you can clone the repository and open the HTML file in your
+browser.
 
-<small>† for convenience of bugfixes, the template CSS is in a separate file,
-but you can hardcode its contents in the HTML too.</small>
+<small>† for convenience of bugfixes, the [template CSS](docs/template.css) is
+in a separate file, but you can hardcode its contents in the HTML too.</small>
 
 A bit more convenient might be using a live reload tool. I used [Five
 server](https://github.com/yandeu/five-server-vscode) when making this.
