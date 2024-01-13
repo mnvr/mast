@@ -172,6 +172,11 @@ hr,
 .column-header,
 .columns-area,
 .columns-area--mobile,
+.column-link,
+.getting-started .column-link,
+.scrollable .column-link,
+.column-subheading,
+.column-inline-form,
 .column-header__collapsible-inner {
     border-color: var(--mast-base-color-l08) !important;
     border-top-color: var(--mast-base-color-l08) !important;
@@ -189,11 +194,15 @@ hr,
     color: var(--mast-secondary-color) !important;
 }
 
+.prose {
+    color: var(--mast-base-color-l26) !important;
+}
+
 label {
     color: var(--mast-primary-color) !important;
 }
 
-textarea,
+.admin-wrapper textarea,
 select,
 input {
     background-color: var(--mast-shadow-color) !important;
@@ -741,12 +750,13 @@ body.embed {
 .compose-form .autosuggest-textarea,
 .compose-form .autosuggest-input,
 .compose-form .spoiler-input {
-    color: var(--mast-base-color) !important;
+    background-color: var(--mast-base-color-d08) !important;
+    color: var(--mast-primary-text-color) !important;
 }
 
 .compose-form .autosuggest-textarea__textarea,
 .compose-form .spoiler-input__input {
-    color: var(--mast-base-color) !important;
+    color: var(--mast-primary-text-color) !important;
 }
 
 .compose-form .autosuggest-textarea__textarea::-ms-input-placeholder,
@@ -829,6 +839,14 @@ body.embed {
 
 .status__relative-time,
 .notification__relative_time {
+    color: var(--mast-base-color-l26) !important;
+}
+.status__display-name,
+.status__relative-time,
+.detailed-status__display-name,
+.detailed-status__datetime,
+.detailed-status__application,
+.account__display-name {
     color: var(--mast-base-color-l26) !important;
 }
 
@@ -1566,6 +1584,11 @@ a.status-card:active .status-card__description {
     background: transparent !important;
 }
 
+.emoji-mart-search input {
+    background: transparent !important;
+    color: #000000 !important;
+}
+
 .upload-area {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -1580,7 +1603,7 @@ a.status-card:active .status-card__description {
 }
 
 .privacy-dropdown__dropdown {
-    background: var(--mast-primary-text-color) !important;
+    background: var(--mast-base-color-d08) !important;
 }
 
 .privacy-dropdown__option {
@@ -1603,7 +1626,7 @@ a.status-card:active .status-card__description {
 }
 
 .language-dropdown__dropdown {
-    background: var(--mast-primary-text-color) !important;
+    background: var(--mast-base-color-d08) !important;
 }
 
 .language-dropdown__dropdown__results__item {
