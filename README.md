@@ -40,8 +40,8 @@ To login to your test instance, use
 
 ## Running the generator locally
 
-The site is a single† HTML file, running on GitHub pages. To run locally, you
-can clone the repository and open the HTML file in your browser.
+The site is a single† HTML file, hosted on GitHub pages. To run locally, you can
+clone the repository and open the HTML file in your browser.
 
 <small>† for convenience of bugfixes, the template CSS is in a separate file,
 but you can hardcode its contents in the HTML too.</small>
