@@ -119,11 +119,6 @@
 
         <script>
             const defaultColors = {
-                // --mast-in-primary: azure;
-                // --mast-in-secondary: azure;
-                // --mast-in-highlight: chartreuse;
-                // --mast-in-text: azure;
-                // --mast-in-tint: navy;
                 // base: "#282c37",
                 base: "midnightblue",
                 // primary: "#9baec8",
@@ -132,10 +127,8 @@
                 secondary: "lavender",
                 // highlight: "#6364ff",
                 highlight: "pink",
-                // text: "#ffffff",
-                text: "azure",
-                // tint: "#563acc",
-                tint: "black",
+                // shadow: "#131419",
+                shadow: "#131419",
             };
 
             function generatePrefix({
@@ -143,8 +136,7 @@
                 primary,
                 secondary,
                 highlight,
-                text,
-                tint,
+                shadow,
             }) {
                 return `/* Add this to Server settings > Appearance > Custom CSS */
 
@@ -153,8 +145,7 @@
     --mast-in-primary: ${primary ?? defaultColors.primary};
     --mast-in-secondary: ${secondary ?? defaultColors.secondary};
     --mast-in-highlight: ${highlight ?? defaultColors.highlight};
-    --mast-in-text: ${text ?? defaultColors.text};
-    --mast-in-tint: ${tint ?? defaultColors.tint};
+    --mast-in-shadow: ${shadow ?? defaultColors.shadow};
 }
 `;
             }
@@ -259,8 +250,7 @@
                                 <li>{makeColorInput("primary")}</li>
                                 <li>{makeColorInput("secondary")}</li>
                                 <li>{makeColorInput("highlight")}</li>
-                                <li>{makeColorInput("text")}</li>
-                                <li>{makeColorInput("tint")}</li>
+                                <li>{makeColorInput("shadow")}</li>
                             </ul>
                         </fieldset>
                         <p className="hint">

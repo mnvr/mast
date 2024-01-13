@@ -10,10 +10,8 @@
     --mast-base-color: var(--mast-in-base, #282c37);
     --mast-primary-color: var(--mast-in-primary, #9baec8);
     --mast-secondary-color: var(--mast-in-secondary, #d9e1e8);
+    --mast-shadow-color: var(--mast-in-shadow, black);
     --mast-highlight-color: var(--mast-in-highlight, #6364ff);
-    --mast-primary-text-color: var(--mast-in-text, #ffffff);
-    /* in mastodon source this is called blurple-600 "Iris" */
-    --mast-tint-color: var(--mast-in-tint, #563acc);
 }
 
 /*
@@ -38,6 +36,9 @@
     support currently, but this might be a viable option in the future.
 */
 :root {
+    /* Just an alias for now */
+    --mast-primary-text-color: var(--mast-primary-color);
+
     /* lighten(base-color, 2%) */
     /* --mast-base-color-l02: #2c313d; */
     --mast-base-color-l02: color-mix(in srgb, var(--mast-base-color), white 2%);
@@ -110,7 +111,6 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: var(--mast-base-color-l04) !important;
-    border: 0px none var(--mast-primary-text-color) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -149,6 +149,47 @@ body.admin {
 
 body.error {
     background: var(--mast-base-color) !important;
+    color: var(--mast-primary-color) !important;
+}
+
+p {
+    color: var(--mast-primary-color) !important;
+}
+
+strong {
+    color: var(--mast-primary-text-color) !important;
+}
+
+hr,
+.status,
+.column > .scrollable,
+.column-header {
+    border-color: var(--mast-base-color-l08) !important;
+    border-top-color: var(--mast-base-color-l08) !important;
+}
+
+.notification__filter-bar {
+    border-color: var(--mast-base-color-l08) !important;
+}
+
+
+.hint {
+    color: var(--mast-secondary-color) !important;
+}
+
+label {
+    color: var(--mast-primary-color) !important;
+}
+
+textarea,
+select,
+input {
+    background-color: var(--mast-shadow-color) !important;
+    color: var(--mast-primary-color) !important;
+    border-color: var(--mast-base-color-l08) !important;
+}
+
+a {
     color: var(--mast-primary-color) !important;
 }
 
@@ -248,10 +289,6 @@ body.embed {
 
 .accounts-table thead th {
     color: var(--mast-primary-color) !important;
-}
-
-.accounts-table tbody tr:last-child td {
-    border-bottom: 0;
 }
 
 .accounts-table__count {
@@ -371,7 +408,7 @@ body.embed {
 .simple_form .block-button {
     background-color: var(--mast-highlight-color) !important;
     color: var(--mast-base-color-d08) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .simple_form button:active,
@@ -385,7 +422,7 @@ body.embed {
 .simple_form .block-button:hover {
     background-color: transparent !important;
     color: var(--mast-highlight-color) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .simple_form button:disabled:hover,
@@ -415,6 +452,10 @@ body.embed {
 
 .flash-message {
     background: var(--mast-base-color-l08) !important;
+    color: var(--mast-primary-color) !important;
+}
+
+.flash-message a {
     color: var(--mast-primary-color) !important;
 }
 
@@ -523,10 +564,22 @@ body.embed {
     background: var(--mast-base-color-l08) !important;
 }
 
+.notification__filter-bar button.active,
+.notification__filter-bar a.active,
+.account__section-headline button.active,
+.account__section-headline a.active {
+    color: var(--mast-highlight-color) !important;
+}
+
+.notification__filter-bar button {
+    color: var(--mast-primary-text-color) !important;
+}
+
+
 .button {
     background-color: var(--mast-highlight-color) !important;
     color: var(--mast-base-color-d08) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button:active,
@@ -534,7 +587,7 @@ body.embed {
 .button:hover {
     background-color: transparent !important;
     color: var(--mast-highlight-color) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button--destructive:active,
@@ -557,7 +610,7 @@ body.embed {
 .button.button-secondary {
     background-color: var(--mast-highlight-color) !important;
     color: var(--mast-base-color-d08) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button.button-secondary:active,
@@ -565,13 +618,13 @@ body.embed {
 .button.button-secondary:hover {
     background-color: transparent !important;
     color: var(--mast-highlight-color) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button.button-tertiary {
     background-color: transparent !important;
     color: var(--mast-highlight-color) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button.button-tertiary:active,
@@ -579,7 +632,7 @@ body.embed {
 .button.button-tertiary:hover {
     background-color: var(--mast-highlight-color) !important;
     color: var(--mast-base-color-d08) !important;
-    border-color: var(--mast-tint-color) !important;
+    border-color: var(--mast-shadow-color) !important;
 }
 
 .button.button-tertiary.button--confirmation {
@@ -944,7 +997,7 @@ body.embed {
 }
 
 .navigation-panel {
-    background: var(--mast-base-color) !important;
+    background: var(--mast-base-color-l08) !important;
     -webkit-border-start: 1px solid var(--mast-base-color-l08) !important;
     border-inline-start: 1px solid var(--mast-base-color-l08) !important;
 }
@@ -996,7 +1049,7 @@ body.embed {
 }
 
 .switch-to-advanced .switch-to-advanced__toggle {
-    color: var(--mast-tint-color) !important;
+    color: var(--mast-shadow-color) !important;
     font-weight: bold;
 }
 
@@ -1276,7 +1329,6 @@ a.status-card:active .status-card__description {
 
 .column-header {
     background: var(--mast-base-color) !important;
-    border-bottom: 1px solid var(--mast-base-color-l08) !important;
 }
 
 .column-header > button {
@@ -1315,7 +1367,6 @@ a.status-card:active .status-card__description {
 }
 
 .column-header__collapsible hr {
-    background: transparent !important;
     border-top: 1px solid var(--mast-base-color-l08) !important;
 }
 
@@ -2443,7 +2494,6 @@ a.status-card:active .status-card__description {
 
 .table > thead > tr > th {
     border-bottom: 2px solid var(--mast-base-color) !important;
-    border-top: 0;
 }
 
 .table > tbody > tr:nth-child(odd) > td,
@@ -2599,10 +2649,6 @@ a.status-card:active .status-card__description {
 
 .admin-wrapper .content hr {
     border-bottom: 1px solid var(--mast-base-color-l08) !important;
-}
-
-.admin-wrapper .content hr.spacer {
-    border: 0;
 }
 
 .admin-wrapper .sidebar ul a,
@@ -2967,10 +3013,6 @@ body .warning-hint,
     border-bottom: 1px solid var(--mast-base-color-d08) !important;
 }
 
-.strike-card__statuses-list__item:last-child {
-    border-bottom: 0;
-}
-
 .strike-card__statuses-list__item__meta {
     color: var(--mast-primary-color) !important;
 }
@@ -3037,7 +3079,7 @@ body .warning-hint,
 .dashboard__quick-access:active,
 .dashboard__quick-access:focus,
 .dashboard__quick-access:hover {
-    background-color: var(--mast-tint-color);
+    background-color: var(--mast-shadow-color);
 }
 
 .dashboard__quick-access.positive {
@@ -3059,10 +3101,4 @@ body .warning-hint,
 .reply-indicator__content blockquote {
     border-left-color: var(--mast-base-color) !important;
     color: var(--mast-base-color) !important;
-}
-
-/* Handle overrides by the light theme */
-
-label {
-    color: var(--mast-primary-color) !important;
 }
