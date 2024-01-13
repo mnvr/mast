@@ -377,8 +377,9 @@ body.embed {
 .simple_form button,
 .simple_form .button,
 .simple_form .block-button {
-    background: var(--mast-highlight-color) !important;
-    color: var(--mast-primary-text-color) !important;
+    background-color: var(--mast-highlight-color) !important;
+    color: var(--mast-base-color-d08) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .simple_form button:active,
@@ -390,7 +391,9 @@ body.embed {
 .simple_form .block-button:active,
 .simple_form .block-button:focus,
 .simple_form .block-button:hover {
-    background-color: var(--mast-tint-color);
+    background-color: transparent !important;
+    color: var(--mast-highlight-color) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .simple_form button:disabled:hover,
@@ -537,6 +540,8 @@ body.embed {
 .button:focus,
 .button:hover {
     background-color: transparent !important;
+    color: var(--mast-highlight-color) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .button--destructive:active,
@@ -559,22 +564,23 @@ body.embed {
 .button.button-secondary:active,
 .button.button-secondary:focus,
 .button.button-secondary:hover {
-    background-color: var(--mast-highlight-color) !important;
-    color: var(--mast-base-color) !important;
+    background-color: transparent !important;
+    color: var(--mast-highlight-color) !important;
     border-color: var(--mast-tint-color) !important;
 }
 
 .button.button-tertiary {
-    background: transparent !important;
-    color: var(--mast-tint-color) !important;
-    border: 1px solid var(--mast-tint-color) !important;
+    background-color: transparent !important;
+    color: var(--mast-highlight-color) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .button.button-tertiary:active,
 .button.button-tertiary:focus,
 .button.button-tertiary:hover {
     background-color: var(--mast-highlight-color) !important;
-    color: var(--mast-primary-color) !important;
+    color: var(--mast-base-color-d08) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .button.button-tertiary.button--confirmation {
