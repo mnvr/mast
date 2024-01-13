@@ -3060,3 +3060,9 @@ body .warning-hint,
     border-left-color: var(--mast-base-color) !important;
     color: var(--mast-base-color) !important;
 }
+
+/* Handle overrides by the light theme */
+
+label {
+    color: var(--mast-primary-color) !important;
+}
