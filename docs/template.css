@@ -152,6 +152,12 @@ body.error {
     color: var(--mast-primary-color) !important;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
     color: var(--mast-primary-color) !important;
 }
@@ -163,15 +169,21 @@ strong {
 hr,
 .status,
 .column > .scrollable,
-.column-header {
+.column-header,
+.columns-area,
+.columns-area--mobile,
+.column-header__collapsible-inner {
     border-color: var(--mast-base-color-l08) !important;
     border-top-color: var(--mast-base-color-l08) !important;
+}
+
+.column-header__collapsible {
+    border-color: var(--mast-base-color-l26) !important;
 }
 
 .notification__filter-bar {
     border-color: var(--mast-base-color-l08) !important;
 }
-
 
 .hint {
     color: var(--mast-secondary-color) !important;
@@ -187,6 +199,16 @@ input {
     background-color: var(--mast-shadow-color) !important;
     color: var(--mast-primary-color) !important;
     border-color: var(--mast-base-color-l08) !important;
+}
+
+select::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: var(--mast-base-color-l26) !important;
+}
+
+mark {
+    color: var(--mast-highlight-color) !important;
 }
 
 a {
@@ -574,7 +596,6 @@ body.embed {
 .notification__filter-bar button {
     color: var(--mast-primary-text-color) !important;
 }
-
 
 .button {
     background-color: var(--mast-highlight-color) !important;
@@ -1614,7 +1635,7 @@ a.status-card:active .status-card__description {
 .search__popout__menu__item:focus,
 .search__popout__menu__item:active,
 .search__popout__menu__item.selected {
-    background: var(--mast-highlight-color) !important;
+    background: var(--mast-base-color-l26) !important;
     color: var(--mast-primary-text-color) !important;
 }
 
@@ -1630,7 +1651,6 @@ a.status-card:active .status-card__description {
 }
 
 .search__input {
-    background: var(--mast-base-color) !important;
     color: var(--mast-primary-color) !important;
 }
 
@@ -2466,6 +2486,11 @@ a.status-card:active .status-card__description {
 
 .poll__option input[type="text"]:focus {
     border-color: var(--mast-highlight-text-color) !important;
+}
+
+.poll__footer,
+.poll__link {
+    color: var(--mast-base-color-l26) !important;
 }
 
 .modal-layout {
