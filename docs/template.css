@@ -100,33 +100,6 @@
     );
 }
 
-/* Some more derived colors
-
-   These are aliases, but the separate variables are kept around in case we need
-   to separately customize them in the future */
-:root {
-    /* in mastodon source: blurple-300, maybe */
-    /* original value was: */
-    /* --mast-button-tertiary: #858afa; */
-    /* redefining it terms of the base tint color.
-
-       This is going to be quite bad (since unlike the other colors for text
-       etc, the tint color usually has a lot of chroma which'll get lost this
-       way). So keeping the variable separate for future customization */
-    --mast-button-tertiary: color-mix(
-        in srgb,
-        var(--mast-tint-color) 60%,
-        white
-    );
-
-    /* in mastodon source: grey-600 */
-    /* original value was: */
-    /* --mast-button-secondary-focus-color: #4e4c5a; */
-    /* redefining it to a similar derived color, can be reverted to be
-       standalone if this not enough */
-    --mast-button-secondary-focus-color: var(--mast-base-color-l12);
-}
-
 /* Keep all variable declaration above this */
 /* ----------- TEMPLATE STARTS ------------ */
 
@@ -556,7 +529,6 @@ body.embed {
 
 .button {
     background-color: var(--mast-highlight-color) !important;
-    /* color: var(--mast-primary-text-color) !important; */
     color: var(--mast-base-color-d08) !important;
     border-color: var(--mast-tint-color) !important;
 }
@@ -564,7 +536,7 @@ body.embed {
 .button:active,
 .button:focus,
 .button:hover {
-    background-color: var(--mast-tint-color);
+    background-color: transparent !important;
 }
 
 .button--destructive:active,
@@ -579,31 +551,30 @@ body.embed {
 }
 
 .button.button-secondary {
-    color: #dadaf3;
-    background: transparent;
-    border: 1px solid #dadaf3;
+    background-color: var(--mast-highlight-color) !important;
+    color: var(--mast-base-color-d08) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .button.button-secondary:active,
 .button.button-secondary:focus,
 .button.button-secondary:hover {
-    border-color: var(--mast-button-secondary-focus-color) !important;
-    color: var(--mast-primary-text-color) !important;
-    background-color: var(--mast-button-secondary-focus-color) !important;
+    background-color: var(--mast-highlight-color) !important;
+    color: var(--mast-base-color) !important;
+    border-color: var(--mast-tint-color) !important;
 }
 
 .button.button-tertiary {
-    background: transparent;
-    border: 1px solid var(--mast-button-tertiary) !important;
-    color: var(--mast-button-tertiary) !important;
+    background: transparent !important;
+    color: var(--mast-tint-color) !important;
+    border: 1px solid var(--mast-tint-color) !important;
 }
 
 .button.button-tertiary:active,
 .button.button-tertiary:focus,
 .button.button-tertiary:hover {
-    background-color: var(--mast-tint-color);
-    color: var(--mast-primary-text-color) !important;
-    border: 0;
+    background-color: var(--mast-highlight-color) !important;
+    color: var(--mast-primary-color) !important;
 }
 
 .button.button-tertiary.button--confirmation {
@@ -643,7 +614,7 @@ body.embed {
 
 .icon-button.disabled {
     color: var(--mast-base-color-l12) !important;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .text-icon-button {
@@ -659,7 +630,7 @@ body.embed {
 
 .text-icon-button.disabled {
     color: #979eb3;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .text-icon-button.active {
@@ -959,7 +930,7 @@ body.embed {
 
 .drawer__tab {
     color: var(--mast-primary-color) !important;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid transparent !important;
 }
 
 .navigation-panel {
@@ -991,7 +962,7 @@ body.embed {
 .column-link {
     background: var(--mast-base-color-l08) !important;
     color: var(--mast-primary-text-color) !important;
-    border-left: 4px solid transparent;
+    border-left: 4px solid transparent !important;
 }
 
 .column-link:hover,
@@ -1011,7 +982,7 @@ body.embed {
 }
 
 .switch-to-advanced .switch-to-advanced__toggle {
-    color: var(--mast-button-tertiary) !important;
+    color: var(--mast-tint-color) !important;
     font-weight: bold;
 }
 
@@ -1044,7 +1015,7 @@ body.embed {
 
 .tip-carousel {
     background: var(--mast-base-color-l04) !important;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
 .tip-carousel:focus {
@@ -1095,7 +1066,7 @@ body.embed {
 
 .tip-carousel {
     background: var(--mast-base-color-l04) !important;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
 .tip-carousel:focus {
@@ -1145,7 +1116,7 @@ body.embed {
 
 .tip-carousel {
     background: var(--mast-base-color-l04) !important;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
 .tip-carousel:focus {
@@ -1194,7 +1165,7 @@ body.embed {
 
 .tip-carousel {
     background: var(--mast-base-color-l04) !important;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
 }
 
 .tip-carousel:focus {
@@ -1257,7 +1228,7 @@ a.status-card:active .status-card__description {
 
 .load-more {
     color: var(--mast-base-color-l26) !important;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 .load-more:hover {
@@ -1334,7 +1305,7 @@ a.status-card:active .status-card__description {
 }
 
 .column-header__collapsible hr {
-    background: transparent;
+    background: transparent !important;
     border-top: 1px solid var(--mast-base-color-l08) !important;
 }
 
@@ -1500,7 +1471,7 @@ a.status-card:active .status-card__description {
 }
 
 .emoji-picker-dropdown__modifiers__menu button {
-    background: transparent;
+    background: transparent !important;
 }
 
 .upload-area {
@@ -1657,7 +1628,7 @@ a.status-card:active .status-card__description {
 }
 
 .media-modal__closer {
-    background: transparent;
+    background: transparent !important;
 }
 
 .media-modal__nav {
@@ -1755,7 +1726,7 @@ a.status-card:active .status-card__description {
 }
 
 .setting-divider {
-    background: transparent;
+    background: transparent !important;
 }
 
 .compare-history-modal .report-modal__target {
@@ -1924,7 +1895,7 @@ a.status-card:active .status-card__description {
 
 .notification__filter-bar button,
 .account__section-headline button {
-    background: transparent;
+    background: transparent !important;
 }
 
 .notification__filter-bar button.active::before,
@@ -2059,7 +2030,7 @@ a.status-card:active .status-card__description {
 
 .account__header__account-note textarea {
     color: var(--mast-secondary-color) !important;
-    background: transparent;
+    background: transparent !important;
 }
 
 .account__header__account-note textarea::-ms-input-placeholder {
@@ -2277,7 +2248,7 @@ a.status-card:active .status-card__description {
 }
 
 .interaction-modal__login__input input {
-    background: transparent;
+    background: transparent !important;
     color: inherit;
 }
 
@@ -2389,7 +2360,7 @@ a.status-card:active .status-card__description {
 }
 
 .notification-bar-action {
-    color: var(--mast-button-tertiary) !important;
+    color: var(--mast-tint-color) !important;
 }
 
 .hashtag-header {
