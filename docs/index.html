@@ -199,6 +199,45 @@
 `;
             }
 
+            /**
+             * If the window's current URL has any fragment component, then
+             * return a new colors object that uses the default colors
+             * overridden by those mentioned in the URL fragment.
+             *
+             * If the URL has no fragment, return undefined.
+             */
+            function parseFragmentColors() {
+                // Strip off the leading '#'. Per MDN, or my understanding of
+                // it, if hash is non-empty then it always begins with a "#".
+                const hash = window.location.hash.slice(1);
+                if (!hash) return undefined;
+
+                // Start with a known set of key values.
+                const colors = defaultColors;
+
+                const searchParams = new URLSearchParams(hash);
+
+                // Update them from the URL fragment
+                for (const [key, value] of searchParams.entries()) {
+                    if (colors[key] !== undefined) {
+                        colors[key] = value;
+                    }
+                }
+
+                return colors;
+            }
+
+            /**
+             * Return a URL by adding the given colors as a fragment to our
+             * current URL.
+             */
+            function makeShareURL(colors) {
+                const url = window.location.href.split("#")[0];
+                const searchParams = new URLSearchParams(colors);
+                const hash = searchParams.toString();
+                return [url, hash].join("#");
+            }
+
             function capitalize(s) {
                 return s.slice(0, 1).toUpperCase() + s.slice(1);
             }
@@ -246,6 +285,27 @@
 
             function Themer({ templateText }) {
                 const [colors, setColors] = React.useState(defaultColors);
+
+                React.useEffect(() => {
+                    // See if the URL fragment has any colors. If so, use them
+                    // to update the ones we have.
+                    //
+                    // This effect only runs once initially.
+                    const fragmentColors = parseFragmentColors();
+                    if (fragmentColors) {
+                        // Need to update colors here instead of overwriting
+                        // them. This is because React batches changes, and
+                        // Inputs causes an update the first time it syncs.
+                        setColors((colors) => ({
+                            ...colors,
+                            ...fragmentColors,
+                        }));
+                        // Reset the fragment to avoid confusion between the
+                        // current values and the ones shown in the URL bar.
+                        window.location.hash = "";
+                    }
+                }, []);
+
                 return (
                     <>
                         <Instructions />
@@ -389,9 +449,8 @@
             }
 
             function Permalink({ colors }) {
+                const url = makeShareURL(colors);
                 const id = React.useId();
-
-                const url = generatePrefix(colors);
 
                 return (
                     <div>
@@ -402,7 +461,7 @@
                                 </label>
                             </legend>
                             <div className="share-link-url-container">
-                                <input id={id} value={"test"} readOnly={true} />
+                                <input id={id} value={url} readOnly={true} />
                                 <CopyButton text={url} />
                             </div>
                         </fieldset>
