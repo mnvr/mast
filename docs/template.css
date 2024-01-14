@@ -122,7 +122,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--mast-base-color) !important;
+    background: var(--mast-base-color-l04) !important;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -810,8 +810,13 @@ body.embed {
     color: black !important;
 }
 
-.compose-form .spoiler-input__input {
-    color: var(--mast-primary-text-color) !important;
+.compose-form__poll-wrapper .autosuggest-input {
+    background-color: transparent !important;
+}
+
+.poll__option .autosuggest-input .poll__option input[type="text"] {
+    background-color: white !important;
+    color: black !important;
 }
 
 .compose-form .autosuggest-textarea__textarea::-ms-input-placeholder,
@@ -856,11 +861,11 @@ body.embed {
 }
 
 .reply-indicator {
-    background: var(--mast-primary-color) !important;
+    background: var(--mast-base-color-l08) !important;
 }
 
 .reply-indicator__display-name {
-    color: var(--mast-base-color) !important;
+    color: var(--mast-secondary-color) !important;
 }
 
 .status,
