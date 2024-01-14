@@ -74,8 +74,14 @@
             }
 
             button.copy {
-                margin-inline: 1rem;
-                margin-block-end: 0.5rem;
+                margin-inline-start: 1rem;
+                /* This is set by the JS, since it changes when we're ack-ing */
+                /* margin-inline-end: 0.7rem; */
+
+                /* Get the button to align with the text preceding it */
+                box-sizing: border-box;
+                margin-top: 0.1rem;
+                vertical-align: text-top;
             }
 
             ul.color-inputs {
@@ -314,27 +320,44 @@
                 const prefixText = generatePrefix(colors);
                 const value = [prefixText, templateText].join("\n");
 
-                const copyToClipboard = () => {
-                    navigator.clipboard.writeText(value);
-                };
-
                 return (
                     <fieldset className="generated-css">
                         <legend>
                             <label htmlFor={id}>
                                 <h3>Generated CSS</h3>
                             </label>
-                            <button
-                                className="copy"
-                                type="button"
-                                onClick={copyToClipboard}
-                            >
-                                Copy
-                            </button>
+                            <CopyButton text={value} />
                         </legend>
 
                         <textarea id={id} value={value} readOnly={true} />
                     </fieldset>
+                );
+            }
+
+            function CopyButton({ text }) {
+                const [isAcknowledging, setIsAcknowledging] =
+                    React.useState(false);
+
+                const copyToClipboard = (e) => {
+                    setIsAcknowledging(true);
+                    setTimeout(() => {
+                        setIsAcknowledging(false);
+                    }, 1000);
+
+                    navigator.clipboard.writeText(text);
+                };
+
+                return (
+                    <button
+                        type="button"
+                        className="copy"
+                        style={{
+                            marginInlineEnd: isAcknowledging ? "0px" : "0.7rem",
+                        }}
+                        onClick={copyToClipboard}
+                    >
+                        {isAcknowledging ? "Copied!" : "Copy"}
+                    </button>
                 );
             }
 
