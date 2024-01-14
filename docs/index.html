@@ -74,9 +74,8 @@
             }
 
             button.copy {
-                margin-inline-start: 1rem;
-                /* This is set by the JS, since it changes when we're ack-ing */
-                /* margin-inline-end: 0.7rem; */
+                margin-inline-start: 1.4rem;
+                margin-inline-end: 0.7rem;
 
                 /* Get the button to align with the text preceding it */
                 box-sizing: border-box;
@@ -351,9 +350,6 @@
                     <button
                         type="button"
                         className="copy"
-                        style={{
-                            marginInlineEnd: isAcknowledging ? "0px" : "0.7rem",
-                        }}
                         onClick={copyToClipboard}
                     >
                         {isAcknowledging ? "Copied!" : "Copy"}
