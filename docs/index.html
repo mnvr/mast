@@ -238,6 +238,30 @@
                 return [url, hash].join("#");
             }
 
+            /**
+             * A hook that lets us know when the window location's hash changes.
+             */
+            function useLocationHash() {
+                const [hash, setHash] = React.useState("");
+
+                React.useEffect(() => {
+                    function handleHashChange() {
+                        const newHash = window.location.hash.slice(1);
+                        if (newHash != hash) {
+                            setHash(newHash);
+                        }
+                    }
+                    window.addEventListener("hashchange", handleHashChange);
+                    return () =>
+                        window.removeEventListener(
+                            "hashchange",
+                            handleHashChange
+                        );
+                }, []);
+
+                return hash;
+            }
+
             function capitalize(s) {
                 return s.slice(0, 1).toUpperCase() + s.slice(1);
             }
@@ -285,6 +309,7 @@
 
             function Themer({ templateText }) {
                 const [colors, setColors] = React.useState(defaultColors);
+                const hash = useLocationHash();
 
                 React.useEffect(() => {
                     // See if the URL fragment has any colors. If so, use them
@@ -304,7 +329,7 @@
                         // current values and the ones shown in the URL bar.
                         window.location.hash = "";
                     }
-                }, []);
+                }, [hash]);
 
                 return (
                     <>
