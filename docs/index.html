@@ -55,7 +55,6 @@
                 margin: 0;
                 margin-block-start: 1rem;
                 padding: 0;
-                display: flex;
                 border: 1px solid currentColor;
             }
 
@@ -66,6 +65,10 @@
 
             fieldset legend h3 {
                 margin-block: 0.5rem;
+            }
+
+            fieldset.color-inputs {
+                display: flex;
             }
 
             fieldset.generated-css legend h3 {
@@ -83,7 +86,7 @@
                 vertical-align: text-top;
             }
 
-            ul.color-inputs {
+            .color-inputs ul {
                 padding-inline: 1rem;
                 width: min(500px, 100%);
 
@@ -91,7 +94,7 @@
                 margin-block-start: 0;
             }
 
-            ul.color-inputs li {
+            .color-inputs ul li {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -100,11 +103,11 @@
                 margin-block: 0.4rem;
             }
 
-            ul.color-inputs li label {
+            .color-inputs ul li label {
                 flex-basis: 5rem;
             }
 
-            ul.color-inputs li input {
+            .color-inputs ul li input {
                 font-family: monospace;
                 font-size: 0.9rem;
                 padding: 0.3rem;
@@ -127,11 +130,12 @@
                 border: 0;
                 margin: 2px;
                 box-sizing: border-box;
-                width: 100%;
+                width: 99%;
                 height: 50svh;
             }
 
             fieldset.share-link {
+                display: flex;
                 margin-block-start: 1.2rem;
             }
 
@@ -376,11 +380,11 @@
 
                 return (
                     <div>
-                        <fieldset>
+                        <fieldset className="color-inputs">
                             <legend>
                                 <h3>Colors</h3>
                             </legend>
-                            <ul className="color-inputs">
+                            <ul>
                                 <li>{makeColorInput("base")}</li>
                                 <li>{makeColorInput("primary")}</li>
                                 <li>{makeColorInput("secondary")}</li>
