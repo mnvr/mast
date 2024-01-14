@@ -47,13 +47,13 @@
                 font-size: small;
                 opacity: 0.8;
                 font-style: italic;
-                margin-block-end: 1rem;
             }
 
             fieldset {
                 width: min(50rem, 100%);
                 box-sizing: border-box;
                 margin: 0;
+                margin-block-start: 1rem;
                 padding: 0;
                 display: flex;
                 border: 1px solid currentColor;
@@ -129,6 +129,36 @@
                 box-sizing: border-box;
                 width: 100%;
                 height: 50svh;
+            }
+
+            fieldset.share-link {
+                margin-block-start: 1.2rem;
+            }
+
+            .share-link-url-container {
+                display: flex;
+                gap: 1rem;
+                width: min(517px, 100%);
+                margin-inline: 1rem;
+                align-items: baseline;
+
+                margin-block-start: 0.2rem;
+                margin-block-end: 0.8rem;
+            }
+
+            .share-link-url-container input {
+                height: 1.4rem;
+                box-sizing: border-box;
+                padding-inline: 0.4rem;
+                margin-inline: 0;
+                flex-grow: 1;
+            }
+
+            .share-link-url-container button {
+                height: 1.3rem;
+                box-sizing: border-box;
+                width: 3rem;
+                margin-inline: 0;
             }
 
             div.about {
@@ -222,6 +252,7 @@
                         <form>
                             <Inputs {...{ colors, setColors }} />
                             <GeneratedCSS {...{ colors, templateText }} />
+                            <Permalink {...{ colors }} />
                         </form>
                         <About />
                     </>
@@ -354,6 +385,32 @@
                     >
                         {isAcknowledging ? "Copied!" : "Copy"}
                     </button>
+                );
+            }
+
+            function Permalink({ colors }) {
+                const id = React.useId();
+
+                const url = generatePrefix(colors);
+
+                return (
+                    <div>
+                        <fieldset className="share-link">
+                            <legend>
+                                <label htmlFor={id}>
+                                    <h3>Share link</h3>
+                                </label>
+                            </legend>
+                            <div className="share-link-url-container">
+                                <input id={id} value={"test"} readOnly={true} />
+                                <CopyButton text={url} />
+                            </div>
+                        </fieldset>
+                        <p className="hint">
+                            Using this link will prefill the colors that you've
+                            entered above.
+                        </p>
+                    </div>
                 );
             }
 
