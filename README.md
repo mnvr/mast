@@ -8,6 +8,12 @@ This is not a solid solution, it is just a prototype, and will likely not
 produce CSS that works in all cases. If you do use it, please try to ensure that
 there is good contrast between text and background.
 
+### Examples
+
+| [Midnight Chartreuse](https://mnvr.github.io/mast/#base=midnightblue&primary=azure&secondary=darkgrey&highlight=chartreuse&shadow=%23131419) | [Erich Mrozek](https://mnvr.github.io/mast/#base=rgb%2819%2C56%2C153%29&primary=azure&secondary=darkgrey&highlight=rgb%28254%2C78%2C55%29&shadow=%23131419) | [Night](https://mnvr.github.io/mast/#base=%23111&primary=aliceblue&secondary=lightcyan&highlight=cyan&shadow=black) |
+| ---- | ---- | ---- |
+| ![Midnight Chartreuse](screenshots/midnight-chartreuse.png) | ![A theme inspired by Erich Mrozek's color study in the Bauhaus Farbenlehre](screenshots/erich-mrozek.png) | ![Neon Night](screenshots/night.png) |
+
 ## Previewing
 
 Mastodon's CSS is complex. And there is a lot of it. 14000 lines (and that's
