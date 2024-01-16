@@ -40,6 +40,36 @@ To login to your test instance, use
   So this'll be something like `admin@xxx-3000.app.github.dev`.
 * Password `mastodonadmin`
 
+### Using Bitnami Mastodon Images
+
+GH Codespaces are wonderful for quick testing, but if you want a longer running
+dev instance where other folks can also preview your theme before you apply it
+to your main instance, it might be better to create a cloud VM.
+
+The easiest way I've found is using the [Docker image provided by
+Bitnami](https://hub.docker.com/r/bitnami/mastodon/) (Thanks!).
+
+1. Create a VM on a VPS somewhere. [Here's a list of free cloud
+   providers](https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison).
+
+2. For example, I used Azure, since they already have a "Bitnami package for
+   Mastodon". I created a VM using this, and within the VM settings, created a
+   DNS hostname for the public IP of the VM. Finally, I used their Cloud CLI to
+   SSH into the VM.
+
+3. The site will already be available on the hostname, but won't be serving
+   Mastodon, instead it'll list the two steps we need to do further.
+
+       sudo /opt/bitnami/configure_app_domain --domain <hostname>
+       sudo /opt/bitnami/bncert-tool --domains <hostname>
+
+4. That's it. Mastodon will be available on hostname, nicely served over HTTPS
+   thanks to the nice folks over at Let's Encrypt. To obtain the login (admin)
+   credentials, do
+
+       sudo cat /home/bitnami/bitnami_credentials
+
+
 ## Running the generator locally
 
 The site is a [single† HTML file](docs/index.html), hosted on GitHub pages. To
