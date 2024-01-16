@@ -92,3 +92,36 @@ Mastodon source under
 [app/javascript/styles/](https://github.com/mastodon/mastodon/tree/main/app/javascript/styles).
 
 You might also find this [CSS color list](https://mrmr.io/css-colors) handy.
+
+### Automatic dark mode
+
+One thing dearly missing from Mastodon is the ability for it to automatically
+switch between dark and light themes. I, like many other folks, have our
+machines set to automatically switch between light and dark themes at day/night.
+So any site that doesn't respect the system theme stands out like a sore thumb
+and is not great for the eyes.
+
+One of my original motivations to make this theme generator was to allow
+automatic theme switching. The current version of the template that it uses does
+not do that, but the scaffolding is set up for it. So say you have figured out
+the colors for both your light (default) and dark modes. Then, just insert the
+following section at the top of the generated CSS:
+
+```css
+/* Add this to Server settings > Appearance > Custom CSS */
+
+:root {
+    --mast-in-base: ...
+    ... /* this is the part that the theme generator creates ...*/
+}
+
+/** Add this section */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --mast-in-base: ...
+        ... /* add the 5 dark color definitions here */
+    }
+}
+```
+
+That's it. The rest of the generated CSS remains unchanged.
